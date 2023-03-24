@@ -61,7 +61,18 @@ app.post("/compose", function (req, res) {
     res.redirect("/");
 });
 
-
+app.get("/posts/:testing", function(req, res){
+    const test = (req.params.testing);
+    posts.forEach(function(post){
+        const title = (post.postTitle);
+        if(title == test){
+            console.log("Match Found!");
+        }
+        else{
+            console.log("Match Not found");
+        }
+    });
+});
 
 
 
